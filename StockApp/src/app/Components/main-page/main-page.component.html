@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>STOCK</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+</head>
+
+<body class="is-preload">
+    <header id="header">
+        <div class="inner">
+
+        </div>
+    </header>
+
+    <div id="main">
+        <section id="one">
+
+        </section>
+
+        <section id="two">
+            <h2>Wskaźniki</h2>
+            <div class="row">
+                <article class="col-6 col-12-xsmall work-item">
+                    <a class="image fit thumb"><img alt="" /></a>
+                    <h3>Wczytaj plik CSV</h3>
+                    <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadCSV($event)"
+                        accept=".csv" />
+                </article>
+                <article>
+                    <mat-form-field class="company-form-field">
+                        <mat-label>Wybierz firme:</mat-label>
+                        <mat-select [(ngModel)]="selectedCompany" (selectionChange)="changeCompany()">
+                            <mat-option *ngFor="let company of companyList" [value]="company">
+                                {{ company.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </article>
+                <article class="col-6 col-12-xsmall work-item">
+                    <a class="image fit thumb"><img alt="" /></a>
+                </article>
+            </div>
+        </section>
+        <app-chart></app-chart>
+
+        <!-- Three -->
+        <section id="three">
+
+        </section>
+
+    </div>
+</body>
+
+</html>
